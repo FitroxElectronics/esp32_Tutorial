@@ -12,11 +12,6 @@ const char* host = "esp32";
 const char* ssid = "xxxxxx";
 const char* password = "xxxxxx";
 
-// Fixed IP
-IPAddress local_IP(192, 168, 1, 111);
-IPAddress gateway(192, 168, 1, 1);
-IPAddress subnet(255, 255, 0, 0);
-
 // ตั้งค่า Port ของ Web Server เป็น Port 80
 WebServer server(80);
 
@@ -105,9 +100,6 @@ const char* serverIndex =
 
 void setup(void) {
   Serial.begin(115200);
-
-// Config. IP
-  WiFi.config(local_IP, gateway, subnet);
 
 // เชื่อมต่อ WiFi
   WiFi.begin(ssid, password);
